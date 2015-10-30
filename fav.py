@@ -21,16 +21,16 @@ class Process(threading.Thread):
 
 def do_fav(_id, token, s, fav=True):
 	_obj = [{
-		"object_id":	str(_id),
-		"cancel":		"false" if fav else "true",
-		"object_type":	'2',
-		"logs_id":		"0"	
+		"object_id":	_id,
+		"cancel":	not fav,
+		"object_type":	2,
+		"logs_id":	0	
 	}]
 	_data = {
 		"access_token":token,
 		"app_version":"2.4.4",
 		"device_type":1,
-		"object" : _obj
+		"object" : json.dumps(_obj)
 	}
 	r = requests.post(fav_url, data = _data)
 	return r

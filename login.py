@@ -83,7 +83,7 @@ if __name__ == "__main__":
 	print token
 	print 20 * ">>"
 	get_recommend_count(1)	
-	r = do_fav(str(4736), token, s, True)
+	r = do_fav(4736, token, s, True)
 	print r.status_code
 	print r.text
 	print r.headers
