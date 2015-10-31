@@ -147,7 +147,15 @@ def reply_comment_by_travel_id(_id):
     for c in comments_list:
         if c['created_by'] == str(FUCKME_ID):
             continue
-        comment = u"这张照片很赞，你觉得呢？"
+        comment_pool = [u"这张照片很赞，你觉得呢？",
+                        u"你不觉得我们应该为楼主点个赞吗？",
+                        u"举手之劳，为楼主点个赞吧！",
+                        u"我觉得我们应该点个赞来鼓励楼主。",
+                        u"楼主就差2个赞就凑齐32个赞了，点吧。",
+                        u"楼主因为没有赞已经吃不下饭了，我们帮帮他吧。",
+                        u"轻轻一按，给你个赞。同学你也试试。",
+                        u"你为什么不为楼主点个赞呢？"]
+        comment = random.choice(comment_pool)
         comment = u"回复" + c['nickname'] + ":" + comment
         parent_id = c['id']
         post_id = c['post_id']
