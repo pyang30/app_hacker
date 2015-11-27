@@ -61,7 +61,7 @@ class Process(threading.Thread):
 		get_item_pics(self.item)	
 
 if __name__ == "__main__":
-	for i in range(2):
+	for i in range(200000):
 		email = get_email()
 		name = get_name()
 		pwd = get_passwd()
