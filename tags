@@ -1,0 +1,59 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Process	dl_pic.py	/^class Process(threading.Thread):$/;"	c	inherits:threading.Thread
+Process	fav.py	/^class Process(threading.Thread):$/;"	c	inherits:threading.Thread
+Process	login.py	/^class Process(threading.Thread):$/;"	c	inherits:threading.Thread
+Process	main.py	/^class Process(threading.Thread):$/;"	c	inherits:threading.Thread
+Process	register.py	/^class Process(threading.Thread):$/;"	c	inherits:threading.Thread
+__init__	dl_pic.py	/^	def __init__(self, item):$/;"	m	class:Process	access:public
+__init__	fav.py	/^	def __init__(self, item):$/;"	m	class:Process	access:public
+__init__	login.py	/^	def __init__(self, item):$/;"	m	class:Process	access:public
+__init__	main.py	/^	def __init__(self, item):$/;"	m	class:Process	access:public
+__init__	register.py	/^	def __init__(self, item):$/;"	m	class:Process	access:public
+counter	dl_pic.py	/^	counter = 0$/;"	v
+counter	main.py	/^	counter = 0$/;"	v
+data	main.py	/^	data = json.loads(data) $/;"	v
+data	main.py	/^	data = res.read()$/;"	v
+data_list	main.py	/^	data_list = data['logs']$/;"	v
+do_fav	fav.py	/^def do_fav(_id, token, s, fav=True):$/;"	f	access:public
+download_pic	dl_pic.py	/^def download_pic(item):$/;"	f	access:public
+email	login.py	/^	email = u"fuckme@fuck.com"$/;"	v
+fav_url	fav.py	/^fav_url = u"http:\/\/tubu.ibuzhai.com\/rest\/v3\/favorite"$/;"	v
+get_email	register.py	/^def get_email():$/;"	f	access:public
+get_email_server	register.py	/^def get_email_server():$/;"	f	access:public
+get_item_pics	main.py	/^def get_item_pics(item):$/;"	f	access:public
+get_name	register.py	/^def get_name():$/;"	f	access:public
+get_passwd	register.py	/^def get_passwd():$/;"	f	access:public
+get_recommend_count	login.py	/^def get_recommend_count(count):$/;"	f	access:public
+get_travel_log_by_id	login.py	/^def get_travel_log_by_id(_id, token):$/;"	f	access:public
+item_url	dl_pic.py	/^item_url = u"http:\/\/tubu.ibuzhai.com\/rest\/v2\/travelog\/"$/;"	v
+item_url	main.py	/^item_url = u"http:\/\/tubu.ibuzhai.com\/rest\/v2\/travelog\/"$/;"	v
+login	login.py	/^def login(email, passwd, s):$/;"	f	access:public
+md5	login.py	/^def md5(str):$/;"	f	access:public
+md5	register.py	/^def md5(str):$/;"	f	access:public
+name	login.py	/^	name = u"fuckme"$/;"	v
+passwd	login.py	/^	passwd = u"fuckme"$/;"	v
+pwd	dl_pic.py	/^pwd = os.path.abspath('.')$/;"	v
+r	login.py	/^	r = do_fav(4736, token, s, True)$/;"	v
+recommend_url	login.py	/^recommend_url = u"http:\/\/tubu.ibuzhai.com\/rest\/v1\/travelog\/recommends"$/;"	v
+reg_url	login.py	/^reg_url = u"http:\/\/tubu.ibuzhai.com\/rest\/v1\/sso\/login"$/;"	v
+reg_url	register.py	/^reg_url = u"http:\/\/tubu.ibuzhai.com\/rest\/v1\/sso\/register"$/;"	v
+register_count	register.py	/^def register_count(email, name, passwd):$/;"	f	access:public
+res	main.py	/^	res = urllib2.urlopen(url)$/;"	v
+results	main.py	/^	results = []	$/;"	v
+run	dl_pic.py	/^	def run(self):$/;"	m	class:Process	access:public
+run	fav.py	/^	def run(self):$/;"	m	class:Process	access:public
+run	login.py	/^	def run(self):$/;"	m	class:Process	access:public
+run	main.py	/^	def run(self):$/;"	m	class:Process	access:public
+run	register.py	/^	def run(self):$/;"	m	class:Process	access:public
+s	login.py	/^	s = requests.session()$/;"	v
+thread_pool	dl_pic.py	/^	thread_pool = []	$/;"	v
+thread_pool	main.py	/^	thread_pool = []	$/;"	v
+token	login.py	/^	token = login(email, passwd, s)$/;"	v
+travel_log	login.py	/^travel_log = u"http:\/\/tubu.ibuzhai.com\/rest\/v2\/travelog\/"$/;"	v
+travels	dl_pic.py	/^travels = []$/;"	v
+travels	main.py	/^travels = []$/;"	v
