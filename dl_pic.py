@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import urllib
 import urllib2
 import json
@@ -42,11 +43,8 @@ if __name__ == "__main__":
 		thread_pool.append(thread)
 		counter += 1
 		thread.start()
-		if counter % 100 == 0:
+		if counter % 20 == 0:
 			for t in thread_pool:
 				t.join()
 			thread_pool = []	
-		for t in thread_pool:
-			t.join()
-		thread_pool = []	
-	print len(results)
+			counter = 0
