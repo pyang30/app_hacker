@@ -43,7 +43,7 @@ if __name__ == "__main__":
 		thread_pool.append(thread)
 		counter += 1
 		thread.start()
-		if counter % 20 == 0:
+		if counter % 40 == 0:
 			for t in thread_pool:
 				t.join()
 			thread_pool = []	

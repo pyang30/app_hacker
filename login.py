@@ -1,4 +1,9 @@
 #!/usr/bin/env python
+# -*- coding:utf-8 -*-
+
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 import urllib
 import urllib2
@@ -6,9 +11,11 @@ import json
 import thread
 import threading
 import requests
+import random
 import hashlib
 from fav import do_fav
 from comment import do_comment
+from comment_pic import do_comment_pic
 from register import get_name
 
 reg_url = u"http://tubu.ibuzhai.com/rest/v1/sso/login"
@@ -34,7 +41,7 @@ def get_travel_log_by_id(_id, token):
 		}
 	url = travel_log + str(_id)
 	r = requests.get(url, params = _params)
-	print r.text
+	return  r.text
 
 def get_trail_id_by_travel_id(_id):
 	data = get_recommend_count(1000)
@@ -70,7 +77,38 @@ class Process(threading.Thread):
 		global get_item_pics
 		get_item_pics(self.item)	
 
+comment_list = None
+def get_one_comment():
+	global comment_list
+	if comment_list == None:
+		with open('comment.txt', 'r') as f:
+			comment_list = f.readlines()
+	
+	return random.choice(comment_list)
+
+def comment_all_pics_by_travel_id(_id):
+	email = u"fuckme@fuck.com"
+	name = u"fuckme"
+	passwd = u"fuckme"
+
+	s = requests.session()
+	token = login(email, passwd, s)
+
+	log_data = get_travel_log_by_id(_id, token)
+
+	post_list = json.loads(log_data)['log']['posts']
+	pic_list = [int(pic['id']) for pic in post_list]
+	
+	for _id in pic_list:
+		comment = get_one_comment()
+		print comment
+		ret = do_comment_pic(_id, token, s, comment )
+		if ret:
+			print("comment successfully")
+
 if __name__ == "__main__":
+	comment_all_pics_by_travel_id(4736)
+	'''
 	s = requests.session()
 	s.headers = {
 		'Accept' :			'*/*',
@@ -91,11 +129,9 @@ if __name__ == "__main__":
 	print token
 	print 20 * ">>"
 	get_recommend_count(1)	
-	'''
 	for i in range(1000):
 		r = do_fav(4736, token, s, True)
 	get_recommend_count(1)	
-	'''
 	trail_id = get_trail_id_by_travel_id(4736)
 
 	with open('account.txt', 'r') as f:
@@ -110,3 +146,4 @@ if __name__ == "__main__":
 			do_comment(trail_id, 4736, token, s, comment)
 			print "%s post a comment:%s " % (name, comment)
 	print 20 * "<<"
+	'''
