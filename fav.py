@@ -33,4 +33,4 @@ def do_fav(_id, token, s, fav=True):
 		"object" : json.dumps(_obj)
 	}
 	r = requests.post(fav_url, data = _data)
-	return r
+	return True if r.status_code == 200 else False

@@ -106,8 +106,19 @@ def comment_all_pics_by_travel_id(_id):
 		if ret:
 			print("comment successfully")
 
+def thumbs_up(_id, count):
+	email = u"fuckme@fuck.com"
+	name = u"fuckme"
+	passwd = u"fuckme"
+
+	s = requests.session()
+	token = login(email, passwd, s)
+	for i in range(count):
+		do_fav(_id, token, s, True)
+
 if __name__ == "__main__":
-	comment_all_pics_by_travel_id(4736)
+	#comment_all_pics_by_travel_id(4784)
+	thumbs_up(4803, 500)
 	'''
 	s = requests.session()
 	s.headers = {
